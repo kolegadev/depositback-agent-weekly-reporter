@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-weekly-reporter-default",
+  "version": "1.0.0",
+  "agent": "weekly-reporter",
+  "created": "2026-05-20T18:05:25.134405",
+  "description": "Default health-check workflow for Weekly Reporter",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "Weekly Reporter is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
